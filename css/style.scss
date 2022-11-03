@@ -34,11 +34,15 @@ body {
     }
 
     main.cards {
+      backdrop-filter: blur(10px);
+
       div.card {
         padding: 32px 23px;
-        background-color: var(--color-bg-card);
+        // background-color: var(--color-bg-card);
+        background-color: rgba(0, 0, 0, 0.1);
         border-bottom: 2px solid var(--color-amarelo);
         border-radius: 6px;
+        backdrop-filter: blur(10px);
 
         h2 {
           display: flex;

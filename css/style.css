@@ -33,11 +33,17 @@ body #app {
 body #app header {
   margin-bottom: 60px;
 }
+body #app main.cards {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
 body #app main.cards div.card {
   padding: 32px 23px;
-  background-color: var(--color-bg-card);
+  background-color: rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid var(--color-amarelo);
   border-radius: 6px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 body #app main.cards div.card h2 {
   display: flex;
