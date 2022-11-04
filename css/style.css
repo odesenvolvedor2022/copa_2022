@@ -26,7 +26,6 @@ body.blue {
   --color-line: #36578470;
   --color-bg: #121214;
   --color-bg-card-: #1d1c22;
-  background-image: url(../assets/bg/bg_blue.svg);
   background-color: var(--color-bg);
 }
 body.green {
@@ -35,7 +34,6 @@ body.green {
   --color-line: #40843670;
   --color-bg: #121412;
   --color-bg-card: #1d221c;
-  background-image: url(../assets/bg/bg_green.svg);
   background-color: var(--color-bg);
 }
 body.yellow {
@@ -44,8 +42,6 @@ body.yellow {
   --color-line: #84783670;
   --color-bg: #141412;
   --color-bg-card: #22211c;
-  background-image: url(../assets/bg/bg_green.svg);
-  background-image: url(../assets/bg/bg_yellow.svg);
   background-color: var(--color-bg);
 }
 body #app {
