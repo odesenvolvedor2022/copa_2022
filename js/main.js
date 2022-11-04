@@ -46,7 +46,6 @@ createCard("21/11","segunda",
 let body = document.querySelector("body");
 let classBody = body.getAttribute("class");
 let logo = document.querySelector(".logo");
-
 let setCor = document.querySelectorAll(".cor_tema");
 
 function mostrarCor(cor){
