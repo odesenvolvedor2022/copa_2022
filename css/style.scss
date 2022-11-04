@@ -2,13 +2,14 @@
 
 :root {
   // CORES
-  --branco: #ffffff;
-  --color-amarelo: #f7dd43;
-  --color-border: #365784;
-  --color-line: #36578470;
-  --color-bg-blue: #121214;
-  --color-bg-card: #1d1c22;
-  --color-text: #f7dd43;
+  --color-text: #ffffff;
+  --color-day-hour: #ffffff;
+  // --color-date: #338AF3;
+  // --color-date: #33f346;
+  // --color-border: #365784;
+  // --color-line: #36578470;
+  // --color-bg-blue: #121214;
+  // --color-bg-card-blue: #1d1c22;
 
   // FORMAS
   --redondo: 6px;
@@ -23,8 +24,44 @@
 }
 
 body {
-  background-color: var(--color-bg-blue);
-  background-image: url(../assets/bg_blue.svg);
+
+  &.blue{
+    // VARIÁVEIS
+    --color-date: #338AF3;
+    --color-border: #365784;
+    --color-line: #36578470;
+    --color-bg: #121214;
+    --color-bg-card-: #1d1c22;
+
+    background-image: url(../assets/bg/bg_blue.svg);
+    background-color: var(--color-bg);
+  }
+
+  &.green{
+    // VARIÁVEIS
+    --color-date: #49f333;
+    --color-border: #398436;
+    --color-line: #40843670;
+    --color-bg: #121412;
+    --color-bg-card: #1d221c;
+
+    background-image: url(../assets/bg/bg_green.svg);
+    background-color: var(--color-bg);
+  }
+
+  &.yellow{
+    // VARIÁVEIS
+    --color-date: #f3e633;
+    --color-border: #847a36;
+    --color-line: #84783670;
+    --color-bg: #141412;
+    --color-bg-card: #22211c;
+
+    background-image: url(../assets/bg/bg_green.svg);
+    background-image: url(../assets/bg/bg_yellow.svg);
+    background-color: var(--color-bg);
+  }
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,6 +74,41 @@ body {
 
     header {
       margin-bottom: 60px;
+      .container_cores{
+        position: fixed;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 20px;
+        z-index: 1;
+        bottom: 50px;
+        right: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        gap: 4px;
+
+        div{
+          height: 28px;
+          width: 28px;
+          border-radius: var(--circle);
+          transition: .3s ease;
+
+          &:hover{
+            transform: scale(1.1);
+          }
+
+          &#blue{
+            background-color: #338AF3;
+          }
+          &#green{
+            background-color: #49f333;
+          }
+          &#yellow{
+            background-color: #f3e633;
+          }
+
+        }
+      }
     }
 
     main.cards {
@@ -65,9 +137,10 @@ body {
           border: 1px solid var(--color-border);
           border-radius: var(--redondo);
           padding: 8px 16px;
+          color: var(--color-date);
 
           span {
-            color: var(--branco);
+            color: var(--color-day-hour);
             font-size: 14px;
             text-transform: uppercase;
           }
@@ -97,13 +170,39 @@ body {
             strong {
               font-size: 30px;
               font-weight: 900;
-              color: var(--branco);
+              color: var(--color-day-hour);
             }
 
             & + li {
               padding-top: 24px;
               border-top: 1px solid var(--color-line);
             }
+          }
+        }
+        
+        // TRANSIÇÕES
+        h2,li{
+          transition: transform .3s;
+
+          &:hover{
+          transform: scale(1.1);
+          }
+        }
+
+        // ANIMAÇÕES
+        opacity: 0;
+        animation: aparecer .5s ease forwards;
+        // &:nth-child(2){
+        //   animation-delay: .25s;
+        // } Esse delay vai ser feito dinâmicamente com ajuda do JS.
+        @keyframes aparecer {
+          0%{
+            opacity: 0;
+            transform: translateY(-100px);
+          }
+          100%{
+            opacity: 1;
+            // não precisa setar o trasnlatey como 0 pq já é o padrão.
           }
         }
       }
@@ -113,4 +212,12 @@ body {
 
 svg path {
   fill: var(--color-border);
+}
+
+.oculto{
+  display: none;
+}
+
+.show{
+  display: block;
 }
